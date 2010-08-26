@@ -86,8 +86,8 @@ class XMLParser
     public function Parse()
     {
         //Create the parser resource
-        $this->parser = xml_parser_create();
-        
+        $this->parser = xml_parser_create();     
+
         //Set the handlers
         xml_set_object($this->parser, $this);
         xml_set_element_handler($this->parser, 'StartElement', 'EndElement');
@@ -197,7 +197,7 @@ class XMLParser
         $tag = $this->GetStackLocation();
 
         //Assign data to it
-        $tag->tagData .= trim($data);
+        $tag->tagData .= $data;
     }
 }
 
