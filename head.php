@@ -27,7 +27,6 @@
 	echo " 	<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\" />" . "\n";
 	echo "	<title>" . $GLOBALS['title'] . "</title>" . "\n";
 	echo "	<link rel=\"stylesheet\" type=\"text/css\" href=\"" . $GLOBALS['skin'] ."\" />" . "\n";
-	echo "	<link rel=\"shortcut icon\" href=\"img/favicon.ico\" />" . "\n";
 
 	if ( isset($GLOBALS['google_analytics_account']) ) {	
 		echo "	<script type=\"text/javascript\">" . "\n";
@@ -43,3 +42,4 @@
 	}
 ?>
 </head>
+

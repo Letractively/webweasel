@@ -90,13 +90,6 @@ img {
 	border:0;
 }
 
-.description {
-	float: right;
-	text-align: right;
-	font-style: italic;
-	margin: 1em 2em 0 0;
-}
-
 .container {
 	margin: 1em auto; 
 	padding: 1em;
@@ -108,11 +101,20 @@ img {
 }
 
 .header {
+	width: 100%;
 	text-align: left;
 	border-color: black;
 }
 
+.description {
+	float: right;
+	text-align: right;
+	font-style: italic;
+	margin: 1em 2em 0 0;
+}
+
 .navbar {
+	clear: both;
 	margin: 0;
 	padding: 0;
 }
