@@ -48,8 +48,8 @@ $GLOBALS['default_page'] = 'test';
 // Use news system.
 $GLOBALS['use_news'] = true;
 
-// URL of the RSS feed to use as a news source
-$GLOBALS['rss_url'] = 'http://code.google.com/feeds/p/webweasel/updates/basic';
+// URL of the Atom feed to use as a news source
+$GLOBALS['atom_feed_url'] = 'http://code.google.com/feeds/p/webweasel/updates/basic';
 
 // Maximum number of displayed news.
 $GLOBALS['max_news'] = 4;

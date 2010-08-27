@@ -19,10 +19,9 @@
  * You should have received a copy of the GNU General Public License
  * along with WebWeasel. If not, see <http://www.gnu.org/licenses/>.
  */
-
 require_once("parser.php");
 
-class FeedEntry {
+class AtomFeedEntry {
 
 	public $date = '';
 
@@ -44,7 +43,7 @@ class FeedEntry {
 
 }
 
-class Feed {
+class AtomFeed {
 
 	public $url = '';
 
@@ -62,7 +61,7 @@ class Feed {
 		$entries = array();
 
 		foreach( $parser->document->entry as $entry ) {
-			$myentry = new FeedEntry();
+			$myentry = new AtomFeedEntry();
 			$myentry->setDate( $entry->published[0]->tagData );
 			$myentry->setTitle( $entry->title[0]->tagData );
 			$myentry->setContent( $entry->content[0]->tagData );

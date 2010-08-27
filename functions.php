@@ -22,6 +22,7 @@
 
 require_once('config.php');
 require_once('WikiRenderer.lib.php');
+require_once("AtomReader.lib.php");
 
 /*
  * Page management
@@ -61,6 +62,16 @@ function get_page_content($page_name) {
 	$content = file_get_contents($GLOBALS['tpl_folder'] . '/' . get_page_info($page_name,'filename'));
 	$wkr = new WikiRenderer();
 	return $wkr->render($content);
+}
+
+/*
+ * News system
+ */
+
+function get_atom_feed_entries() {
+	$feed = new AtomFeed();
+	$feed->setUrl($GLOBALS['atom_feed_url']);
+	return $feed->getEntries($GLOBALS['max_news']);
 }
 
 /*

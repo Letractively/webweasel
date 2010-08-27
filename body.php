@@ -20,6 +20,7 @@
  * along with WebWeasel. If not, see <http://www.gnu.org/licenses/>.
  */
 ?>
+
 <body>
 
 <div class="container">
@@ -67,9 +68,19 @@ if ( isset($GLOBALS['logo_path']) ) {
 </div>
 
 <?
+require_once('functions.php');
+
 if ( $GLOBALS['use_news'] ) {
 	echo "<div class=\"news\">" . "\n";
-	include("news.php");
+
+	echo "<h5>What's new?</h5>\n";
+
+	foreach( get_atom_feed_entries() as $entry ) {
+		echo "<h6>" . $entry->title . "</h6>\n";
+		echo "<p class=\"date\">" . $entry->date . "</p>\n";
+		echo "<p>" . $entry->content . "</p>\n";
+	}
+
 	echo "</div>" . "\n";
 }
 ?>
