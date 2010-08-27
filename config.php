@@ -4,7 +4,7 @@
  */
 
 /*
- * Global informations
+ * Website data
  */
  
 // Title of the page
@@ -13,14 +13,21 @@ $GLOBALS['title'] = 'Website Title';
 // Subtitle of the page (comment if not used)
 $GLOBALS['subtitle'] = 'Website Subtitle';
 
-// Relative path to the template folder.
-$GLOBALS['tpl_folder'] = 'templates';
-
 // Relative path to logo (comment if not used)
 //$GLOBALS['logo_path'] = 'path/to/logo';
 
 // Relative path to the skin
 $GLOBALS['skin'] = 'classic.css';
+
+// Google Analytics (comment if not used)
+//$GLOBALS['google_analytics_account'] = "Your account ID";
+
+/*
+ * Page data
+ */
+
+// Relative path to the template folder.
+$GLOBALS['tpl_folder'] = 'templates';
 
 // Define here the different pages of your website.
 // The different informations are:
@@ -34,11 +41,8 @@ $GLOBALS['pages'] = array(
 // Name of the default page.
 $GLOBALS['default_page'] = 'test';
 
-// Google Analytics (comment if not used)
-//$GLOBALS['google_analytics_account'] = "Your account ID";
-
 /*
- * News system
+ * News system data
  */
 
 // Use news system.
