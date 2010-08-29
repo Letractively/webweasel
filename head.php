@@ -28,7 +28,11 @@
 	echo "	<title>" . get_title() . "</title>" . "\n";
 	echo "	<link rel=\"stylesheet\" type=\"text/css\" href=\"" . get_css_path() ."\" />" . "\n";
 
-	if ( is_google_analytics_account() ) {	
+	if ( is_atom_feed_url() ) {
+		echo "	<link rel=\"alternate\" type=\"application/atom+xml\" href=\"" . get_atom_feed_url() . "\" id=\"auto-discovery\"\>" . "\n";	
+	}
+
+	if ( is_google_analytics_account() ) {
 		echo "	<script type=\"text/javascript\">" . "\n";
 		echo "	var gaJsHost = ((\"https:\" == document.location.protocol) ? \"https://ssl.\" : \"http://www.\");" . "\n";
 		echo "	document.write(unescape(\"%3Cscript src='\" + gaJsHost + \"google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E\"));" . "\n";
