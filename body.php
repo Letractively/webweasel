@@ -28,17 +28,17 @@
 <div class="header">
 
 <?php
-require('config.php');
+require_once('functions.php');
 
 echo "<div class=\"description\">\n";
-echo "<h1>"  . $GLOBALS['title'] . "</h1>\n";
-if ( isset($GLOBALS['subtitle']) ) {
-	echo $GLOBALS['subtitle'] . "\n";
+echo "<h1>"  . get_title() . "</h1>\n";
+if ( is_subtitle() ) {
+	echo get_subtitle() . "\n";
 }
 echo "</div>\n";
 
-if ( isset($GLOBALS['logo_path']) ) {
-	echo "<img src=\"" . $GLOBALS['logo_path'] . "\" alt=\"Logo\"/>\n";
+if ( is_logo_path() ) {
+	echo "<img src=\"" . get_logo_path() . "\" alt=\"Logo\"/>\n";
 }
 ?>
 
@@ -70,14 +70,14 @@ if ( isset($GLOBALS['logo_path']) ) {
 <?
 require_once('functions.php');
 
-if ( $GLOBALS['use_news'] ) {
+if ( is_atom_feed_url() ) {
 	echo "<div class=\"news\">" . "\n";
 
 	echo "<h5>What's new?</h5>\n";
 
 	foreach( get_atom_feed_entries() as $entry ) {
 		echo "<h6>" . $entry->title . "</h6>\n";
-		echo "<p class=\"date\">" . $entry->date . "</p>\n";
+		echo "<p class=\"date\">" . $entry->updated . "</p>\n";
 		echo "<p>" . $entry->content . "</p>\n";
 	}
 

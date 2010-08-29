@@ -23,14 +23,20 @@ require_once("parser.php");
 
 class AtomFeedEntry {
 
-	public $date = '';
+	public $published = '';
+
+	public $updated = '';
 
 	public $title = '';
 
 	public $content = '';
 
-	public function setDate($date) {
-		$this->date = substr($date,0,10);
+	public function setPublished($published) {
+		$this->published = substr($published,0,10);
+	}
+
+	public function setUpdated($updated) {
+		$this->updated = substr($updated,0,10);
 	}		
 
 	public function setTitle($title) {
@@ -62,7 +68,8 @@ class AtomFeed {
 
 		foreach( $parser->document->entry as $entry ) {
 			$myentry = new AtomFeedEntry();
-			$myentry->setDate( $entry->published[0]->tagData );
+			$myentry->setPublished( $entry->published[0]->tagData );
+			$myentry->setUpdated( $entry->updated[0]->tagData );
 			$myentry->setTitle( $entry->title[0]->tagData );
 			$myentry->setContent( $entry->content[0]->tagData );
 

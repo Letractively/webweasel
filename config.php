@@ -17,7 +17,7 @@ $GLOBALS['subtitle'] = 'Website Subtitle';
 //$GLOBALS['logo_path'] = 'path/to/logo';
 
 // Relative path to the skin
-$GLOBALS['skin'] = 'classic.css';
+$GLOBALS['css_path'] = 'classic.css';
 
 // Google Analytics (comment if not used)
 //$GLOBALS['google_analytics_account'] = "Your account ID";
@@ -27,7 +27,7 @@ $GLOBALS['skin'] = 'classic.css';
  */
 
 // Relative path to the template folder.
-$GLOBALS['tpl_folder'] = 'templates';
+$GLOBALS['tpl_folder_path'] = 'templates';
 
 // Define here the different pages of your website.
 // The different informations are:
@@ -45,10 +45,7 @@ $GLOBALS['default_page'] = 'test';
  * News system data
  */
 
-// Use news system.
-$GLOBALS['use_news'] = true;
-
-// URL of the Atom feed to use as a news source
+// URL of the Atom feed to use as a news source (comment if not used)
 $GLOBALS['atom_feed_url'] = 'http://code.google.com/feeds/p/webweasel/updates/basic';
 
 // Maximum number of displayed news.

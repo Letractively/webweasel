@@ -25,10 +25,45 @@ require_once('WikiRenderer.lib.php');
 require_once("AtomReader.lib.php");
 
 /*
+ * Website management
+ */
+
+function get_title() {
+	return $GLOBALS['title'];
+}
+
+function is_subtitle() {
+	return isset($GLOBALS['subtitle']);
+}
+
+function get_subtitle() {
+	return $GLOBALS['subtitle'];
+}
+
+function is_logo_path() {
+	return isset($GLOBALS['logo_path']);
+}
+
+function get_logo_path() {
+	return $GLOBALS['logo_path'];
+}
+
+function get_css_path() {
+	return $GLOBALS['css_path'];
+}
+
+function is_google_analytics_account() {
+	return isset($GLOBALS['google_analytics_account']);
+}
+
+function get_google_analytics_account() {
+	return $GLOBALS['google_analytics_account'];
+}
+
+/*
  * Page management
  */
 
-// Use this function to retrieve the current page.
 function get_current_page() {
 	if ( isset($_GET['page_name']) ) {
 		return $_GET['page_name'];
@@ -54,12 +89,16 @@ function get_page_info($page_name,$info_name) {
 	return $GLOBALS['pages'][$page_name][$info_name];
 }
 
+function get_tpl_folder_path() {
+	return $GLOBALS['tpl_folder_path'];
+}
+
 function get_current_page_content() {
 	return get_page_content(get_current_page());
 }
 
 function get_page_content($page_name) {
-	$content = file_get_contents($GLOBALS['tpl_folder'] . '/' . get_page_info($page_name,'filename'));
+	$content = file_get_contents(get_tpl_folder_path() . '/' . get_page_info($page_name,'filename'));
 	$wkr = new WikiRenderer();
 	return $wkr->render($content);
 }
@@ -68,10 +107,22 @@ function get_page_content($page_name) {
  * News system
  */
 
+function is_atom_feed_url() {
+	return isset($GLOBALS['atom_feed_url']);
+}
+
+function get_atom_feed_url() {
+	return $GLOBALS['atom_feed_url'];
+}
+
+function get_max_news() {
+	return $GLOBALS['max_news'];
+}
+
 function get_atom_feed_entries() {
 	$feed = new AtomFeed();
-	$feed->setUrl($GLOBALS['atom_feed_url']);
-	return $feed->getEntries($GLOBALS['max_news']);
+	$feed->setUrl(get_atom_feed_url());
+	return $feed->getEntries(get_max_news());
 }
 
 /*
