@@ -33,16 +33,7 @@
 	}
 
 	if ( is_google_analytics_account() ) {
-		echo "	<script type=\"text/javascript\">" . "\n";
-		echo "	var gaJsHost = ((\"https:\" == document.location.protocol) ? \"https://ssl.\" : \"http://www.\");" . "\n";
-		echo "	document.write(unescape(\"%3Cscript src='\" + gaJsHost + \"google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E\"));" . "\n";
-		echo "	</script>" . "\n";
-		echo "\n";
-		echo "	<script type=\"text/javascript\">" . "\n";
-		echo "	var pageTracker = _gat._getTracker(\"" . get_google_analytics_account() . "\");" . "\n";
-		echo "	pageTracker._initData();" . "\n";
-		echo "	pageTracker._trackPageview();" . "\n";
-		echo "	</script>" . "\n";
+		echo get_google_analytics_js();
 	}
 ?>
 </head>
