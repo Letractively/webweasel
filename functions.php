@@ -143,7 +143,7 @@ function get_atom_feed_entries() {
  */
 
 function get_webweasel_version() {
-	return "1.2";
+	return "1.2.2";
 }
 
 function get_webweasel_link() {
