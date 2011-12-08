@@ -67,7 +67,7 @@ if ( is_logo_path() ) {
 
 </div>
 
-<?
+<?php
 require_once('functions.php');
 
 if ( is_atom_feed_url() ) {
