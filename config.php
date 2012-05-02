@@ -16,8 +16,11 @@ $GLOBALS['subtitle'] = 'Website Subtitle';
 // Relative path to logo (comment if not used)
 //$GLOBALS['logo_path'] = 'path/to/logo';
 
+// Relative path to the skin folder
+$GLOBALS['skins_folder_path'] = 'skins';
+
 // Relative path to the skin
-$GLOBALS['css_path'] = 'classic.css';
+$GLOBALS['skin'] = 'classic';
 
 // Google Analytics (comment if not used)
 //$GLOBALS['google_analytics_account'] = "Your account ID";

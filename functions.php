@@ -49,7 +49,11 @@ function get_logo_path() {
 }
 
 function get_css_path() {
-	return $GLOBALS['css_path'];
+	return $GLOBALS['skins_folder_path'] . '/' . $GLOBALS['skin'] . '/' . $GLOBALS['skin'] . '.css';
+}
+
+function get_body_path() {
+	return $GLOBALS['skins_folder_path'] . '/' . $GLOBALS['skin'] . '/' . $GLOBALS['skin'] . '.php';
 }
 
 function is_google_analytics_account() {
@@ -143,7 +147,7 @@ function get_atom_feed_entries() {
  */
 
 function get_webweasel_version() {
-	return "1.2.2";
+	return "1.3";
 }
 
 function get_webweasel_link() {
